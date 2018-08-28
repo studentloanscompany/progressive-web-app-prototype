@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This application was built as a part of MX-2950 - Investigate designing My Account for mobile users. The current industry standard for designing for mobile can be loosely summarised by the following checklist, as prescribed by Google's "Progressive Web Application" (PWA) checklist (https://developers.google.com/web/progressive-web-apps/checklist).
+The current industry standard for designing for mobile can be loosely summarised by the following checklist, as prescribed by Google's "Progressive Web Application" (PWA) checklist (https://developers.google.com/web/progressive-web-apps/checklist).
 
 While all the points are important for a final product the ones being focussed in on with this spike are:
 

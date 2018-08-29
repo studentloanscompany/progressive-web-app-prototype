@@ -6,6 +6,7 @@ const next = require('next')
 
 const app = next()
 const handle = app.getRequestHandler()
+const PORT = process.env.PORT
 
 app.prepare()
   .then(() => {
@@ -21,7 +22,5 @@ app.prepare()
         handle(req, res, parsedUrl)
       }
     })
-    .listen(3000, () => {
-      console.log(`> Ready on http://localhost:${3000}`)
-    })
+    .listen(PORT)
   })

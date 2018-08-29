@@ -51,6 +51,15 @@
   width: 100%;
 }
 
+@media only screen and (max-width: 400px) {
+  .section__status_completed,
+  .section__status_incomplete {
+    float: left;
+    clear: left;
+    margin-top: 15px;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .mainbar {
     float: left;

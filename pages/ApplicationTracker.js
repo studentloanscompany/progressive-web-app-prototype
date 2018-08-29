@@ -57,32 +57,34 @@ class ApplicationTracker extends Component {
   getApplicationHeader(application, key) {
     return (
       <li key={key} className="section__row">
-        <h3 className="section__label">
-          <Link
-            href={{
-              pathname: "/Application",
-              query: { application: application.id }
-            }}
-            className="section__label action--secondary"
-            style={{ textDecoration: "none" }}
+        <div className="base-2-3">
+          <h3 className="section__label">
+            <Link
+              href={{
+                pathname: "/Application",
+                query: { application: application.id }
+              }}
+              className="section__label action--secondary"
+              style={{ textDecoration: "none" }}
+            >
+              {`${application.modeOfStudy} ${application.type} ${
+                application.name
+              }`}
+            </Link>
+          </h3>
+          <h3
+            className="section__label"
+            style={{ clear: "left", fontWeight: "normal" }}
           >
-            {`${application.modeOfStudy} ${application.type} ${
-              application.name
-            }`}
-          </Link>
-        </h3>
-        <h3
-          className="section__label"
-          style={{ clear: "left", fontWeight: "normal" }}
-        >
-          {application.location}
-        </h3>
-        <h3
-          className="section__label"
-          style={{ clear: "left", fontWeight: "normal" }}
-        >
-          Last updated: {application.lastUpdated}
-        </h3>
+            {application.location}
+          </h3>
+          <h3
+            className="section__label"
+            style={{ clear: "left", fontWeight: "normal" }}
+          >
+            Last updated: {application.lastUpdated}
+          </h3>
+        </div>
         {this.getApplicationStatus(application)}
       </li>
     );
@@ -226,14 +228,6 @@ class ApplicationTracker extends Component {
                 this.getFEApplications(this.state.activeCustomer),
                 "Further Education"
               )}
-              <button
-                type="button"
-                onClick={() => {
-                  this.toggleApps();
-                }}
-              >
-                Toggle Apps on/off
-              </button>
             </div>
             <div className="base2-1-3">
               <div className="sidebar">
@@ -280,6 +274,14 @@ class ApplicationTracker extends Component {
           <Header />
           {this.getMain()}
           <Footer />
+          <button
+            type="button"
+            onClick={() => {
+              this.toggleApps();
+            }}
+          >
+            Toggle Apps on/off
+          </button>
         </div>
       </React.Fragment>
     );

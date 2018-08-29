@@ -7,7 +7,7 @@ import Footer from "../components/atoms/Footer";
 
 class Application extends Component {
   static async getInitialProps({ query }) {
-    return {application: query["application"]};
+    return { application: query["application"] };
   }
 
   constructor(props) {
@@ -26,15 +26,17 @@ class Application extends Component {
     return this.state.application.toDoItems.map((toDoItem, index) => {
       return (
         <li key={index} className="section__row">
-          <h3 className="section__label">
-            <Link
-              to="/application"
-              className="section__label action--secondary"
-              style={{ textDecoration: "none" }}
-            >
-              {toDoItem.description}
-            </Link>
-          </h3>
+          <div className="base-2-3">
+            <h3 className="section__label">
+              <Link
+                to="/application"
+                className="section__label action--secondary"
+                style={{ textDecoration: "none" }}
+              >
+                {toDoItem.description}
+              </Link>
+            </h3>
+          </div>
           {this.getToDoItemStatus(toDoItem)}
         </li>
       );
@@ -71,7 +73,9 @@ class Application extends Component {
                 <Link href="home">{data.pages["home"]}</Link>
               </li>
               <li>
-                <Link href="ApplicationTracker">{data.pages["applicationTracker"]}</Link>
+                <Link href="ApplicationTracker">
+                  {data.pages["applicationTracker"]}
+                </Link>
               </li>
               <li>{data.pages["application"]}</li>
             </ol>

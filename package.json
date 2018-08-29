@@ -6,10 +6,8 @@
   "scripts": {
     "dev": "cross-env PORT=3000 node server.js",
     "build": "next build",
-    "start": "node server.js"
-  },
-  "engines": {
-    "node": "0.10.8"
+    "start": "node server.js",
+    "heroku-postbuild": "next build"
   },
   "author": "",
   "license": "ISC",

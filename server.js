@@ -6,7 +6,6 @@ const next = require('next')
 
 const app = next()
 const handle = app.getRequestHandler()
-const PORT = process.env.PORT
 
 app.prepare()
   .then(() => {
@@ -22,5 +21,5 @@ app.prepare()
         handle(req, res, parsedUrl)
       }
     })
-    .listen(PORT)
+    .listen(process.env.PORT)
   })
